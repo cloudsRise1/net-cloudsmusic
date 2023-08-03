@@ -7,7 +7,7 @@ export default{
         {
             path:'/findmusic',
             component: () => import('@/views/findMusic'),
-            children:[
+            children:[  
                 {
                     path:'personalView',
                     component: () => import('@/views/findMusic/views/personalView'),

@@ -3,6 +3,7 @@
     <el-carousel :interval="4000" type="card" class="swiper-form" height="200px">
         <el-carousel-item v-for="(item,index) in swipers" :key="index">
             <el-image
+            @click="getMusic(item.targetId)"
             :src="item.imageUrl"
             :style="{width:'100%'}"
             fit="contain"
@@ -19,7 +20,9 @@
 
 <script>
 import {
-  getSwipers
+  getSwipers,
+  getMusicUrl,
+  getMusicMenu
 } from '@/api/personalView'
 export default {
   data(){
@@ -37,6 +40,16 @@ export default {
       if(response.code == 200){
         this.swipers = response.banners
       }
+    },
+    getMusic(id){
+      getMusicUrl(id).then(res => {
+        const url = res.data[0].url
+        this.$store.commit('NOW_MUSIC', url)
+      })
+      getMusicMenu(id).then(res => {
+        const menu = res.songs[0]
+        this.$store.commit('NOW_MUSICMENU', menu)
+      })
     }
   }
 }

@@ -1,7 +1,5 @@
 <template>
-    <div>我是真的personal
-        <div>哈哈哈</div>
-    </div>
+    <div>敬请期待！</div>
 </template>
 
 <script>

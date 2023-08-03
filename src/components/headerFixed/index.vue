@@ -89,7 +89,7 @@ export default {
     align-items: center;
     width: 1400px;
     height: 80px;
-    background: orange;
+    background: #5292fe;
     .header-login{
         display: flex;
         flex-direction:row;
@@ -124,7 +124,7 @@ export default {
     .header-multifunc{
         display: flex;
         align-items: center;
-        margin-left:400px;
+        margin-left:500px;
         font-size:20px;
         .multifunc-platform{
             margin-left:10px;

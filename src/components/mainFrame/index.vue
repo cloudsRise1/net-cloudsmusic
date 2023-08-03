@@ -21,7 +21,7 @@ export default {
     flex-direction: row;
     width: 1400px;
     height: 640px;
-    background-color: #fff;
+    background: #fff;
 }
 
 </style>

@@ -19,6 +19,7 @@ module.exports = defineConfig({
       }
   },
   devServer: { 
+    open:true,
     proxy: {//解决跨域问题
         '/api': {
             // 此处的写法，目的是为了 将 /api 替换成 https://autumnfish.cn/
@@ -31,5 +32,11 @@ module.exports = defineConfig({
             }
         }
     }
-  }
+  },
+  chainWebpack(config) {
+		config.plugin('html').tap((args) => { 
+			args[0].title = '酷狗音乐-v0.1';
+			return args;
+		})
+	}
 })

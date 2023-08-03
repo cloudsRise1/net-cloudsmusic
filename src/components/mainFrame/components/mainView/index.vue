@@ -17,7 +17,7 @@ export default {
     // align-items:center;
     width: 1200px;
     height: 640px;
-    background-color: skyblue;
+    background: #fff;
 }
 
 </style>
