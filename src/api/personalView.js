@@ -36,3 +36,20 @@ export function getMusicMenu(musicId){
         }
     })
 }
+
+/**
+ * 
+ * 点击获取歌单列表
+ * params {number, number} params
+ */
+
+export function getMusicList(){
+    return request({
+        url:'/top/playlist',
+        params:{
+            offset: (Math.random() * 1297).toFixed(0) - 12,
+            limit: 12
+        }
+    })
+
+}

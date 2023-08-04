@@ -28,6 +28,7 @@
         class="serach-box"
         placeholder="请输入内容"
         suffix-icon="el-icon-search"
+        @keyup.enter.native="goSearch"
         clearable
         ></el-input>
         <div class="history-microphone">
@@ -73,10 +74,24 @@
 </template>
 
 <script>
+
 export default {
     data(){
         return{
             inputData :'',
+        }
+    },
+    methods:{
+        goSearch(){
+            let inputData = this.inputData
+            if(inputData == ''){
+                this.$message({
+                    type:'warning',
+                    message:'输入不能为空'
+                })
+                return
+            }
+            this.$router.push('/search' + inputData)
         }
     }
 }
@@ -115,7 +130,7 @@ export default {
         align-items: center;
         font-size:20px;
         .serach-box{
-
+            width:260px;
         }
         .history-microphone{
             margin-left:4px;

@@ -37,7 +37,12 @@ export default{
         {
             path:'/personalFM',
             component: () => import('@/views/personalFM'),
+        },
+        {
+            path:'/search:keywords',
+            component: () => import ('@/views/searchView'),
         }
+
 
 
 
